@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/0rnella/ornellember.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["dates"],
+  "author": "github.com/0rnella",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/0rnella/ornellember/issues"
