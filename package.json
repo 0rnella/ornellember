@@ -1,0 +1,25 @@
+{
+  "name": "ornellember",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index",
+  "typings": "lib/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0rnella/ornellember.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0rnella/ornellember/issues"
+  },
+  "homepage": "https://github.com/0rnella/ornellember#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
