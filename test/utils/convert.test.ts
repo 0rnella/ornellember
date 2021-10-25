@@ -1,4 +1,4 @@
-import { convertDay, getDaysBeforeCurrentMonth, getDayNumber } from '../../src/utils/index';
+import { convertDay, getDaysBeforeCurrentMonth, getDayNumber } from '../../src/utils';
 
 describe('Get Date' , () => {
     describe('Get days before current month:', () => {
@@ -59,7 +59,7 @@ describe('Get Date' , () => {
             expect(getDayNumber(dec31of2020)).toBe(366);
         })
 
-        it('for Dec 31, should return 365 on a non-leap yar', () => {
+        it('for Dec 31, should return 365 on a non-leap year', () => {
             const dec31of1983 = new Date(1983, 11, 31);
             const dec31of2021 = new Date('December 31, 2021');
 
