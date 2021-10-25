@@ -1,4 +1,4 @@
-import { ornellember } from '../src/index';
+import ornellember from '../src/index';
 
 describe('ornellember', () => {
     it('if called with a date, should return an ornellember object with date passed', () => {
@@ -21,5 +21,35 @@ describe('ornellember', () => {
 
         expect(date2).not.toBe(date1);
         expect(date2).toEqual(date1);
+    });
+
+    describe('holiday', () => {
+        it('should return N for December 31 on a non-leap year', () => {
+            const date = new Date('December 31, 2007');
+            const ornDate = ornellember(date);
+
+            expect(ornDate.holiday()).toBe('N');
+        });
+
+        it('should return N for December 30 on a leap year', () => {
+            const date = new Date('December 30, 2008');
+            const ornDate = ornellember(date);
+
+            expect(ornDate.holiday()).toBe('N');
+        });
+
+        it('should return O for December 31 on a leap year', () => {
+            const date = new Date('December 31, 2008');
+            const ornDate = ornellember(date);
+
+            expect(ornDate.holiday()).toBe('O');
+        });
+
+        it('should return null when it is not a holiday', () => {
+            const date = new Date('January 17, 2008');
+            const ornDate = ornellember(date);
+
+            expect(ornDate.holiday()).toBe(null);
+        });
     })
 })

@@ -24,22 +24,29 @@ export class Ornellember {
         this.milliseconds = rawDate.getMilliseconds();
     }
 
-    clone() {
+    clone() : Ornellember {
         return new Ornellember(this.rawDate);
     }
 
-    add(quantity: number, unit: OrnellemberTimeUnit) {
+    add(quantity: number, unit: OrnellemberTimeUnit) : Ornellember {
         const newDate = addToDate(this.rawDate, quantity, unit);
 
         return new Ornellember(newDate);
     }
 
-    subtract(quantity: number, unit: OrnellemberTimeUnit) {
-        return this.add(-quantity, unit);
+    format() : string {
+        return `${this.day} ${this.month}, ${this.year}`
     }
 
-    format() {
-        return `${this.day} ${this.month}, ${this.year}`
+    holiday () : string|null {
+        if (this.day === 29) return 'N';
+        if (this.day === 30) return 'O';
+
+        return null;
+    }
+
+    subtract(quantity: number, unit: OrnellemberTimeUnit) : Ornellember {
+        return this.add(-quantity, unit);
     }
 }
 
