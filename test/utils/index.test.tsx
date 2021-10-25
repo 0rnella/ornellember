@@ -1,4 +1,4 @@
-import { convertDay, getDaysBeforeCurrentMonth, getDayNumber } from '../src/index';
+import { convertDay, getDaysBeforeCurrentMonth, getDayNumber } from '../../src/utils/index';
 
 describe('Get Date' , () => {
     describe('Get days before current month:', () => {
@@ -66,7 +66,7 @@ describe('Get Date' , () => {
             expect(getDayNumber(dec31of1983)).toBe(365);
             expect(getDayNumber(dec31of2021)).toBe(365);
         })
-    })
+    });
 
     describe('convertDate', () => {
         it('for 1, should return day 1 month A', () => {
