@@ -50,7 +50,7 @@ export class Ornellember {
     }
 }
 
-export const ornellember = (date?: any): Ornellember => {
+export default (date?: any): Ornellember => {
     if (date instanceof Date) {
         return new Ornellember(date);
     }
@@ -62,4 +62,6 @@ export const ornellember = (date?: any): Ornellember => {
     if (!date) {
         return new Ornellember(new Date());
     }
+
+    throw new Error('Unexpected input. Accepted types are a Date, an Ornellember instance, or undefined');
 }
