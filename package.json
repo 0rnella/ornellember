@@ -1,7 +1,7 @@
 {
   "name": "ornellember",
   "version": "2.0.0",
-  "description": "",
+  "description": "This library exists to convert dates to the ornellember format, a joke date format similar to the International Fixed Calendar",
   "main": "lib/index",
   "typings": "lib/index",
   "scripts": {

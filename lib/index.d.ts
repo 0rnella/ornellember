@@ -1,13 +1,18 @@
-declare type OrnellemberDay = {
-    day: number;
-    month: string;
+import { OrnellemberTimeUnit } from "./utils";
+export declare class Ornellember {
     year: number;
-};
-export declare const getDaysBeforeCurrentMonth: (currentMonthIndex: number, isLeapYear: boolean) => number;
-export declare const getDayNumber: (date: Date) => number;
-export declare const convertDay: (dayNumber: number) => {
-    day: number;
     month: string;
-};
-export declare const convertDateToOrnellember: (date: Date) => OrnellemberDay;
-export {};
+    day: number;
+    hours: number;
+    minutes: number;
+    milliseconds: number;
+    rawDate: Date;
+    constructor(date: Date);
+    clone(): Ornellember;
+    add(quantity: number, unit: OrnellemberTimeUnit): Ornellember;
+    format(): string;
+    holiday(): string | null;
+    subtract(quantity: number, unit: OrnellemberTimeUnit): Ornellember;
+}
+declare const _default: (date?: any) => Ornellember;
+export default _default;
