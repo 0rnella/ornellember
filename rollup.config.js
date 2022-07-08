@@ -5,6 +5,7 @@ export default {
     output: {
       file: 'lib/bundle.js',
       format: 'iife',
+      name: 'ornellemberBundle',
       compact: true
     },
     plugins: [typescript()]
