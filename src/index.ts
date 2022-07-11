@@ -14,14 +14,16 @@ export class Ornellember {
         const rawDate = date;
 
         const converted = getOrnellemberDay(rawDate);
-        this.day = converted.day;
-        this.month = converted.month;
-        this.rawDate = rawDate;
-
-        this.year = rawDate.getFullYear();
-        this.hours = rawDate.getHours();
-        this.minutes = rawDate.getMinutes();
-        this.milliseconds = rawDate.getMilliseconds();
+        Object.defineProperties(this, {
+            day: {value: converted.day},
+            month: {value: converted.month},
+            rawDate: {value: rawDate},            
+            year: {value: rawDate.getFullYear()},
+            hours: {value: rawDate.getHours()},
+            minutes: {value: rawDate.getMinutes()},
+            milliseconds: {value: rawDate.getMilliseconds()},
+        })
+        // this.day = converted.day;
     }
 
     clone() : Ornellember {
