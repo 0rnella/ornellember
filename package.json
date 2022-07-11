@@ -5,8 +5,9 @@
   "main": "lib/index",
   "typings": "lib/index",
   "scripts": {
-    "test": "jest --watch",
-    "build": "tsc -p . & rollup --config"
+    "lint": "eslint ./test ./src --fix",
+    "test": "jest",
+    "build": "npm run lint & tsc -p . & rollup --config"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,10 @@
     "@babel/preset-typescript": "^7.15.0",
     "@rollup/plugin-typescript": "^8.3.3",
     "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "babel-jest": "^27.3.0",
+    "eslint": "^8.19.0",
     "jest": "^27.3.0",
     "rollup": "^2.76.0",
     "tslib": "^2.4.0",
