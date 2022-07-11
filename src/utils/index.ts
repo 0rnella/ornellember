@@ -1,2 +1,2 @@
-export * from './convert'
+export * from './convert';
 export * from './add';

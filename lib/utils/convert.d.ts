@@ -1,4 +1,4 @@
-import { Ornellember } from "..";
+import { Ornellember } from '..';
 export declare const getDaysBeforeCurrentMonth: (currentMonthIndex: number, isLeapYear: boolean) => number;
 export declare const isLeapYear: (date: Date) => boolean;
 export declare const getDayNumber: (date: Date) => number;

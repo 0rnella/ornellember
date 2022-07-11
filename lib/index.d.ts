@@ -1,4 +1,4 @@
-import { OrnellemberTimeUnit } from "./utils";
+import { OrnellemberTimeUnit } from './utils';
 export declare class Ornellember {
     year: number;
     month: string;
@@ -14,5 +14,5 @@ export declare class Ornellember {
     holiday(): string | null;
     subtract(quantity: number, unit: OrnellemberTimeUnit): Ornellember;
 }
-declare const _default: (date?: any) => Ornellember;
+declare const _default: (date?: Ornellember | Date) => Ornellember;
 export default _default;

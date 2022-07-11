@@ -1,71 +1,71 @@
-import { Ornellember } from "..";
+import { Ornellember } from '..';
 
 export const getDaysBeforeCurrentMonth = (currentMonthIndex: number, isLeapYear: boolean): number => {
 
-    // then calculate the days of all the months before.
-    const daysInMonths = [
-        31, // January
-        isLeapYear ? 29 : 28, //February
-        31, // March
-        30, // April
-        31, // May
-        30, // June
-        31, // July
-        31, // August
-        30, // September
-        31, // October
-        30, // November
-        31 // December
-    ];
+	// then calculate the days of all the months before.
+	const daysInMonths = [
+		31, // January
+		isLeapYear ? 29 : 28, //February
+		31, // March
+		30, // April
+		31, // May
+		30, // June
+		31, // July
+		31, // August
+		30, // September
+		31, // October
+		30, // November
+		31 // December
+	];
 
-    // how many days before the current month?
+	// how many days before the current month?
 
-    let daysBeforeCurrentMonth = 0;
+	let daysBeforeCurrentMonth = 0;
 
-    for (let i=0; i < currentMonthIndex; i++) {
-        daysBeforeCurrentMonth += daysInMonths[i];
-    }
+	for (let i=0; i < currentMonthIndex; i++) {
+		daysBeforeCurrentMonth += daysInMonths[i];
+	}
 
-    return daysBeforeCurrentMonth;
-}
+	return daysBeforeCurrentMonth;
+};
 
 export const isLeapYear = (date: Date): boolean =>  {
-    return (date.getFullYear() % 4) === 0;
-}
+	return (date.getFullYear() % 4) === 0;
+};
 
 export const getDayNumber = (date: Date) => {
-    // first determine if it is a leap year
-    const isCurrentLeapYear = isLeapYear(date);
-    const currentMonth = date.getMonth();
+	// first determine if it is a leap year
+	const isCurrentLeapYear = isLeapYear(date);
+	const currentMonth = date.getMonth();
 
-    // then determine how many days happened before this current month started
-    const daysBeforeCurrentMonth = getDaysBeforeCurrentMonth(currentMonth, isCurrentLeapYear);
+	// then determine how many days happened before this current month started
+	const daysBeforeCurrentMonth = getDaysBeforeCurrentMonth(currentMonth, isCurrentLeapYear);
     
-    const dayOfMonth = date.getDate();
+	const dayOfMonth = date.getDate();
 
-    return daysBeforeCurrentMonth + dayOfMonth;
+	return daysBeforeCurrentMonth + dayOfMonth;
 
-}
+};
 
 export const convertDay = (dayNumber: number) : { day: number, month: string } => {
-    const monthLength = 28;
+	const monthLength = 28;
     
-    let monthIndex = Math.floor((dayNumber - 1) / monthLength);
+	let monthIndex = Math.floor((dayNumber - 1) / monthLength);
 
-    // make sure there are only 13 months (additional days can be added to month 12)
-    if (monthIndex > 12) {
-        monthIndex = 12;
-    }
+	// make sure there are only 13 months (additional days can be added to month 12)
+	if (monthIndex > 12) {
+		monthIndex = 12;
+	}
 
-    const dayOfMonth = dayNumber - (monthIndex * monthLength);
+	const dayOfMonth = dayNumber - (monthIndex * monthLength);
 
-    const monthLetter = String.fromCharCode(97 + monthIndex).toUpperCase();
+	const monthLetter = String.fromCharCode(97 + monthIndex).toUpperCase();
 
-    return {
-        day: dayOfMonth,
-        month: monthLetter
-    }
-}
+	return {
+		day: dayOfMonth,
+		month: monthLetter
+	};
+};
 
 /*
     This returns the date a new format that I invented, largely based on the International Fixed Calendar
@@ -73,6 +73,6 @@ export const convertDay = (dayNumber: number) : { day: number, month: string } =
     It's mostly a joke but also I think it is logical and fun
 */
 export const getOrnellemberDay = (date: Date) : Partial<Ornellember> => {
-    const dayNumber = getDayNumber(date);
-    return convertDay(dayNumber);
-}
+	const dayNumber = getDayNumber(date);
+	return convertDay(dayNumber);
+};
